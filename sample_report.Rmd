@@ -1,0 +1,36 @@
+---
+title: "gapminder_report"
+author: "Marinos Kosmopoulos"
+date: "1/16/2019"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Load the data
+
+First, we are going to use read.csv to load the gapminder data.
+
+```{r}
+dat <- read.csv("C:/Users/Marinos_Test/Downloads/gapminder_data.csv")
+summary(dat)
+```
+
+# Plot the data
+
+```{r}
+library(ggplot2)
+```
+
+##Plotting
+
+```{r}
+ggplot(data = dat, mapping = aes(x = year, y = lifeExp, by = country))+facet_wrap(~continent)+geom_line()+ theme_bw()
+```
+
+```{r, fig.cap = "Life expectancy vs. Year, for each country, facetted by continent"}
+knitr::include_graphics("Figures/life_exp.png")
+```
+
