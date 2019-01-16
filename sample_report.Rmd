@@ -3,6 +3,7 @@ title: "gapminder_report"
 author: "Marinos Kosmopoulos"
 date: "1/16/2019"
 output: word_document
+Location: UMN
 ---
 
 ```{r setup, include=FALSE}
